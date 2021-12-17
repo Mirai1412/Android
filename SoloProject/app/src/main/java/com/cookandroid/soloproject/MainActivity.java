@@ -12,6 +12,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.view.View;
+import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     EditText user1, user2;
     TextView toastText1;
     View ToastView, userView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +49,13 @@ public class MainActivity extends AppCompatActivity {
         bt4 = (Button) findViewById(R.id.bt4);
         bt5 = (Button) findViewById(R.id.bt5);
 
+//        DateFormat formatter5 = DateFormat.getDateInstance(DateFormat.FULL);
+//        formatter5.setTimeZone(cal.getTimeZone());
+//        String tot_str = formatted1 + "\n" + formatted2 + "\n" + formatted3 + "\n" + formatted4 + "\n" + formatted5;
+//        Toast.makeText(this, tot_str, Toast.LENGTH_LONG).show();
 
+
+        Refresh();
 
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,4 +128,66 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+
+
+    void Refresh(){
+
+        StringBuilder time = new StringBuilder();
+
+
+
+        //에폭타임 구하기
+
+        long epoch = System.currentTimeMillis();
+
+//        time.append("epoch = " + epoch + "\n");
+
+
+
+        //GregorianCalender를 이용해서 현재 시간 날짜 구하기
+
+        Calendar cal = new GregorianCalendar();
+
+        time.append(String.format("%d년 %d월 %d일 %d시 %d분\n",
+
+                cal.get(Calendar.YEAR),
+
+                cal.get(Calendar.MONTH)+1, cal.get(Calendar.DAY_OF_MONTH),
+
+                cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE)));
+
+
+
+        //Date 클래스를 이용한 현재 시간 구하기
+
+        Date now = new Date();
+
+        //SimpleDateFormat 클래스를 사용해서 표시하는 포맷을 바꿔준다.
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd hh:mm:ss");
+
+        Calendar tom = new GregorianCalendar();
+
+        tom.add(Calendar.DAY_OF_MONTH, 1);//내일날짜를 위해 1일을 더한다.
+
+
+
+        Date tomdate = tom.getTime();
+
+        //포맷을 바꿔주고
+
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy.MM.dd");
+
+        TextView result = (TextView)findViewById(R.id.result);
+
+        result.setText(time.toString());
+
+    }
+
+
+
+
+
 }
