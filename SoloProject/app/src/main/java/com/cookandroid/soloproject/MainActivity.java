@@ -129,27 +129,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
     void Refresh(){
-
         StringBuilder time = new StringBuilder();
 
-
-
-        //에폭타임 구하기
-
         long epoch = System.currentTimeMillis();
-
-//        time.append("epoch = " + epoch + "\n");
-
-
-
-        //GregorianCalender를 이용해서 현재 시간 날짜 구하기
-
         Calendar cal = new GregorianCalendar();
-
         time.append(String.format("%d년 %d월 %d일 %d시 %d분\n",
 
                 cal.get(Calendar.YEAR),
@@ -158,30 +142,16 @@ public class MainActivity extends AppCompatActivity {
 
                 cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE)));
 
-
-
-        //Date 클래스를 이용한 현재 시간 구하기
-
         Date now = new Date();
-
         //SimpleDateFormat 클래스를 사용해서 표시하는 포맷을 바꿔준다.
-
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd hh:mm:ss");
-
         Calendar tom = new GregorianCalendar();
-
         tom.add(Calendar.DAY_OF_MONTH, 1);//내일날짜를 위해 1일을 더한다.
 
-
-
         Date tomdate = tom.getTime();
-
         //포맷을 바꿔주고
-
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy.MM.dd");
-
         TextView result = (TextView)findViewById(R.id.result);
-
         result.setText(time.toString());
 
     }

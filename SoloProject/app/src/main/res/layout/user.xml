@@ -13,6 +13,7 @@
         android:textColor="#FFCAF8"
         />
     <EditText
+        android:backgroundTint="#FFCAF8"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -29,6 +30,7 @@
         android:layout_gravity="center"
         />
     <EditText
+        android:backgroundTint="#FFCAF8"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
