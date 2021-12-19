@@ -3,13 +3,56 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/edtUrl"
+                android:backgroundTint="#FCC7C5"
+                android:singleLine="true"
+                ></EditText>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="이동"
+                android:backgroundTint="#FCC7C5"
+                android:id="@+id/btnGo">
+            </Button>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnBack"
+                android:backgroundTint="#FCC7C5"
+                android:textColor="@color/white"
+                android:text="이전"/>
+        </LinearLayout>
+
+        <WebView
+            android:id="@+id/webView1"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_height="480dp" />
+
+
+
+
     <Button
         android:id="@+id/backbuttom1"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#FCC7C5"
         android:text="돌아기기"
+        android:textSize="20dp"
+        android:layout_marginBottom="10dp"
         />
-
-
 
 </LinearLayout>

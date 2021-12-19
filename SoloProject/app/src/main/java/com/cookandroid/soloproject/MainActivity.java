@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView tvName, tvEmail;
     Button bt1;
-    Button bt2, bt3, bt4, bt5;
+    Button bt3, bt4, bt5;
     EditText user1, user2;
     TextView toastText1;
     View ToastView, userView;
@@ -44,15 +44,9 @@ public class MainActivity extends AppCompatActivity {
         tvName = (TextView) findViewById(R.id.tvName);
         tvEmail = (TextView) findViewById(R.id.tvEmail);
         bt1 = (Button) findViewById(R.id.bt1);
-        bt2 = (Button) findViewById(R.id.bt2);
         bt3 = (Button) findViewById(R.id.bt3);
         bt4 = (Button) findViewById(R.id.bt4);
         bt5 = (Button) findViewById(R.id.bt5);
-
-//        DateFormat formatter5 = DateFormat.getDateInstance(DateFormat.FULL);
-//        formatter5.setTimeZone(cal.getTimeZone());
-//        String tot_str = formatted1 + "\n" + formatted2 + "\n" + formatted3 + "\n" + formatted4 + "\n" + formatted5;
-//        Toast.makeText(this, tot_str, Toast.LENGTH_LONG).show();
 
 
         Refresh();
@@ -96,18 +90,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bt2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),page1.class);
-                startActivity(intent);
-            }
-        });
+
 
         bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),page1.class);
+                Intent intent = new Intent(getApplicationContext(),page2.class);
                 startActivity(intent);
             }
         });
@@ -115,14 +103,14 @@ public class MainActivity extends AppCompatActivity {
         bt4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),page1.class);
+                Intent intent = new Intent(getApplicationContext(),page3.class);
                 startActivity(intent);
             }
         });
         bt5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),page1.class);
+                Intent intent = new Intent(getApplicationContext(),page4.class);
                 startActivity(intent);
             }
         });
@@ -134,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
         long epoch = System.currentTimeMillis();
         Calendar cal = new GregorianCalendar();
-        time.append(String.format("%d년 %d월 %d일 %d시 %d분\n",
+        time.append(String.format("%d년 %d월 %d일",
 
                 cal.get(Calendar.YEAR),
 

@@ -15,7 +15,7 @@ public class page2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page1);
+        setContentView(R.layout.page2);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
